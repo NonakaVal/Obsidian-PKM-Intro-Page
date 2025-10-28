@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsiVault - Vault Gratuito para Obsidian</title>
+    <title>Vault Gratuito para Obsidian</title>
     <meta name="description" content="Receba nosso vault gratuito para Obsidian e entre no grupo de produtividade">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,6 +18,7 @@
             emailjs.init("PZiDE9NvPUsrqACAs"); // Sua Public Key do EmailJS
         })();
     </script>
+    
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -393,20 +394,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Form Section -->
                 <div class="glass-card p-8 rounded-3xl fade-in">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold mb-2">Entre no nosso grupo</h3>
-                        <p class="text-gray-300">
-                            Me passa seu WhatsApp que eu te envio o vault e te adiciono no grupo
-                        </p>
-                    </div>
+      
 
                     <form id="download-form" class="space-y-6" novalidate>
                         <div id="form-success"
                             class="hidden bg-gradient-to-r from-green-900/40 to-green-800/20 text-green-300 p-4 rounded-xl text-center border border-green-800/30"
                             role="alert" aria-live="polite">
                             <i data-feather="check-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
-                            <span id="success-message">Oba! Já te enviei o link no WhatsApp e vou te adicionar no
-                                grupo!</span>
+                            <span id="success-message">Seu download deve começar imediatamente</span>
                         </div>
 
                         <div id="form-error"
@@ -433,10 +428,10 @@
                                 </div>
                                 <input type="tel" id="phone" name="phone" required
                                     class="w-full input-field rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 phone-input"
-                                    placeholder="(15) 99830-4344" maxlength="15" aria-required="true"
+                                    placeholder="(00) 00000-0000" maxlength="15" aria-required="true"
                                     aria-describedby="phone-help">
                             </div>
-                            <p id="phone-help" class="text-xs text-gray-400 mt-1">Vou usar só pra te adicionar no grupo
+                            <p id="phone-help" class="text-xs text-gray-400 mt-1">Vou usar só pra te adicionar na nossa comunidade
                             </p>
                         </div>
 
@@ -454,7 +449,7 @@
                                 class="w-4 h-4 rounded bg-gray-800 border-purple-500 text-purple-500 focus:ring-purple-500 mr-3 mt-1"
                                 aria-required="true">
                             <label for="privacy" class="text-xs text-gray-300 leading-relaxed">
-                                Concordo em receber o vault e participar do grupo no WhatsApp
+                                Concordo em receber o vault e receber novidades e dicas de produtividade
                             </label>
                         </div>
 
@@ -462,7 +457,7 @@
                             class="btn-primary text-white font-semibold py-4 px-6 rounded-xl w-full flex items-center justify-center relative focus:outline-none"
                             aria-live="polite">
                             <i data-feather="message-circle" class="mr-2" aria-hidden="true"></i>
-                            <span id="btn-text">Me envia o vault e me adiciona no grupo</span>
+                            <span id="btn-text">Enviar e Baixar Obsidian Starter Template</span>
                             <div id="btn-loading" class="hidden ml-2" aria-hidden="true">
                                 <div class="loading-spinner rounded-full border-2 border-white border-t-transparent">
                                 </div>
@@ -479,8 +474,9 @@
                 <div class="fade-in">
                     <div class="personal-message p-6 rounded-2xl mb-6">
                         <p class="text-gray-200 leading-relaxed">
-                            "Oi! Se você chegou aqui pelo YouTube, muito obrigado pela atenção. Criei esse vault
-                            pensando em como organizar melhor minhas ideias e projetos, e quero compartilhar com você."
+                            "Oi! Se você já chegou aqui pelo YouTube, muito obrigado pela atenção. Criei esse vault
+                            pensando em como organizar melhor minhas ideias e projetos, e quero compartilhar com você.
+                            Caso tenha encontrado essa página de outra forma, segue abaixo o vídeo onde apresento tudo sobre.. "
                         </p>
                     </div>
 
@@ -513,28 +509,28 @@
                 <div class="gallery-item rounded-2xl overflow-hidden glass-card group" data-image="assets/pkm-+.png"
                     role="button" tabindex="0" aria-label="Expandir imagem do Dashboard Principal">
                     <div class="overflow-hidden">
-                        <img src="assets/pkm-+.png" alt="Dashboard Principal" loading="lazy">
+                        <img src="assets/homepage.png" alt="Dashboard Principal" loading="lazy">
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-2xl overflow-hidden glass-card group" data-image="assets/home-main.png"
                     role="button" tabindex="0" aria-label="Expandir imagem do Graph View">
                     <div class="overflow-hidden">
-                        <img src="assets/home-main.png" alt="Graph View" loading="lazy">
+                        <img src="assets/recent-created.png" alt="Graph View" loading="lazy">
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-2xl overflow-hidden glass-card group" data-image="assets/home-1.png"
                     role="button" tabindex="0" aria-label="Expandir imagem do Daily Notes">
                     <div class="overflow-hidden">
-                        <img src="assets/home-1.png" alt="Daily Notes" loading="lazy">
+                        <img src="assets/dashboard++.png" alt="Daily Notes" loading="lazy">
                     </div>
                 </div>
 
                 <div class="gallery-item rounded-2xl overflow-hidden glass-card group" data-image="assets/pkm++.png"
                     role="button" tabindex="0" aria-label="Expandir imagem do Project Management">
                     <div class="overflow-hidden">
-                        <img src="assets/pkm++.png" alt="Project Management" loading="lazy">
+                        <img src="assets/grid.png" alt="Project Management" loading="lazy">
                     </div>
                 </div>
 
@@ -692,12 +688,12 @@
         <div class="container mx-auto">
             <div class="flex flex-col items-center space-y-8">
                 <div class="flex space-x-4">
-                    <a href="#"
+                    <a href="https://github.com/NonakaVal/obsidian-starter-template"
                         class="text-gray-400 hover:text-purple-300 transition p-3 rounded-xl hover:bg-purple-900/20 focus:outline-none focus:ring-2 focus:ring-purple-500"
                         aria-label="GitHub">
                         <i data-feather="github"></i>
                     </a>
-                    <a href="#"
+                    <a href="mailto:valdenirnonaka@gmail.com"
                         class="text-gray-400 hover:text-purple-300 transition p-3 rounded-xl hover:bg-purple-900/20 focus:outline-none focus:ring-2 focus:ring-purple-500"
                         aria-label="Email">
                         <i data-feather="mail"></i>
@@ -705,7 +701,7 @@
                 </div>
 
                 <p class="text-gray-500 text-sm">
-                    &copy; 2023 ObsiVault. Todos os direitos reservados.
+                    &copy; 2025. Todos os direitos reservados.
                 </p>
             </div>
         </div>
