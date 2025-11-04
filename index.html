@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault Gratuito para Obsidian</title>
+    <title>Starter Template para Obsidian by NonakaVal</title>
     <meta name="description" content="Receba nosso vault gratuito para Obsidian e entre no grupo de produtividade">
+    <link rel="icon" href="assets/between-notes-icon.svg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -78,16 +79,16 @@
     <!-- Logo Section -->
     <section class="logo-section bg-gradient-to-b from-dark via-darker to-dark py-10">
         <img src="assets/between-notes-dark-2.svg" alt="Logo Between Notes"
-            class="mx-auto w-80 md:w-[39rem] drop-shadow-2xl transition-transform duration-500 hover:scale-105">
+            class="mx-auto w-80 md:w-[41rem] drop-shadow-2xl transition-transform duration-500 hover:scale-105">
         <div class="logo-text mt-6">
             <p class="text-gray-300 text-xl md:text-2xl text-center max-w-2xl mx-auto">
-                 <u><strong>Conecte ideias</strong></u>, Aprenda de forma intencional e transforme suas
+                <u><strong>Conecte ideias</strong></u>, Aprenda de forma intencional e transforme suas
                 anotações em <u><strong>Conhecimento Vivo.</strong></u>
 
             </p>
         </div>
     </section>
-
+<div class="section-divider my-4"></div>
 
     <!-- Download Section -->
     <section id="download" class="section-padding px-6 md:px-12 bg-gradient-to-br from-darker via-dark to-darker">
@@ -107,7 +108,7 @@
                             <strong>Eai 👋...</strong> Se veio do
                             <a href="https://www.youtube.com/@nonaka96" target="_blank" rel="noopener noreferrer"
                                 class="text-blue-400 underline hover:text-blue-300">YouTube</a>,
-                            <u><strong>Muito obrigado</strong></u> 💜! 
+                            <u><strong>Muito obrigado</strong></u> 💜!
                         </p>
                         <p class="text-gray-300 mt-4 text-left font-normal">
                             Seu formulário para download está logo abaixo 👇 ou ao lado 👉
@@ -153,13 +154,7 @@
                         </div>
 
                         <!-- Campos -->
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Como quer ser
-                                chamado?</label>
-                            <input type="text" id="name" name="name"
-                                class="w-full input-field rounded-xl px-4 py-3 text-white placeholder-gray-500"
-                                placeholder="Seu nome ou apelido">
-                        </div>
+
 
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Seu
@@ -173,6 +168,14 @@
                                     placeholder="(00) 00000-0000" maxlength="15">
                             </div>
                             <p class="text-xs text-gray-400 mt-1">Vou usar só pra te adicionar na nossa comunidade</p>
+                        </div>
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Como quer ser
+                                chamado? (opcional)</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full input-field rounded-xl px-4 py-3 text-white placeholder-gray-500"
+                                placeholder="Seu nome ou apelido">
                         </div>
 
                         <div>
@@ -369,49 +372,59 @@
                 </div>
             </div>
 
-            <!-- Botão para subir ao formulário -->
+            <!-- Botão para subir ao formulário 
             <div class="text-center mt-16 fade-in">
                 <a href="#download"
                     class="btn-primary text-white font-semibold py-4 px-8 rounded-xl inline-flex items-center focus:outline-none">
                     <i data-feather="arrow-up" class="mr-2" aria-hidden="true"></i>
                     Receber o Vault Gratuito
                 </a>
-            </div>
+            </div>-->
         </div>
     </section>
+
 
     <!-- Success Section -->
     <section id="success-section" class="section-padding px-6 md:px-12 bg-gradient-to-b from-dark to-darker"
         style="display: none;">
         <div class="container-max-width">
             <!-- Mensagem de Agradecimento Principal -->
-            <div class="thank-you-message fade-in">
-                <div class="thank-you-icon">
-                    <i data-feather="heart" class="text-white text-2xl"></i>
+            <div class="thank-you-message fade-in text-center">
+                <div class="thank-you-icon mb-4">
+                    <i data-feather="heart" class="text-white text-3xl"></i>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    Muito Obrigado! <span class="gradient-text">🎉</span>
+                    🎉 Bem-vindo à Comunidade Between Notes!
                 </h2>
-                <p class="text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
-                    Fico muito feliz que você baixou meu modelo! Espero que ele ajude muito na sua produtividade.
-                </p>
                 <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Agora você faz parte da nossa comunidade! em breve te adicionarei no nosso grupo.. você também pode
-                    entrar diretamente pelo link abaixo 🚀
+                    Sua inscrição foi concluída com sucesso! 🚀<br>
+                    Agora você faz parte da nossa comunidade — um espaço para evoluir sua gestão de conhecimento e seus
+                    estudos.
+                    Você pode entrar no grupo do WhatsApp abaixo ou seguir diretamente para o guia de instalação para
+                    começar.
                 </p>
 
-                <!-- Call-to-Action Principal para o WhatsApp -->
-                <div class="text-center">
+                <!-- Botões de Ação -->
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                     <a href="https://chat.whatsapp.com/JwbDMZKHyhvFHC4dWBEBaf?mode=wwt" target="_blank"
-                        class="btn-whatsapp text-white font-bold py-4 px-8 rounded-xl inline-flex items-center justify-center mb-4 focus:outline-none hover:scale-105 transition-transform text-lg"
+                        class="btn-whatsapp text-white font-bold py-4 px-8 rounded-xl inline-flex items-center justify-center focus:outline-none hover:scale-105 transition-transform text-lg"
                         rel="noopener noreferrer">
                         <i data-feather="message-circle" class="mr-3 text-xl" aria-hidden="true"></i>
                         ENTRAR NO GRUPO DO WHATSAPP
+                    </a>
+
+                    <a href="guide.html" target="_blank" rel="noopener noreferrer"
+                        class="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-bold py-4 px-8 rounded-xl inline-flex items-center justify-center focus:outline-none hover:scale-105 transition-transform text-lg">
+                        <i data-feather="book-open" class="mr-3 text-xl" aria-hidden="true"></i>
+                        ABRIR GUIA DE INSTALAÇÃO
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+
+
 
     <!-- Footer -->
     <footer class="bg-darker py-16 px-6 md:px-12 border-t border-purple-900/20">
@@ -574,15 +587,15 @@
             function triggerDownload() {
                 try {
                     const link = document.createElement('a');
-                    link.href = 'assets/ObsiVault.zip';
-                    link.download = 'ObsiVault.zip';
+                    link.href = 'assets/Obsidian-starter-template.zip';
+                    link.download = 'Obsidian-starter-template.zip';
                     link.style.display = 'none';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
                 } catch (error) {
                     console.error('Erro no download:', error);
-                    window.open('assets/ObsiVault.zip', '_blank');
+                    window.open('assets/Obsidian-starter-template.zip', '_blank');
                 }
             }
 
@@ -647,7 +660,7 @@
                     }
 
                     // Mostrar mensagem de sucesso no formulário
-                    document.getElementById('success-message').textContent = 'Oba! Já te enviei o link no WhatsApp e vou te adicionar no grupo!';
+                    document.getElementById('success-message').textContent = 'Tudo certo 🎉🎉 ... ';
                     document.getElementById('form-success').classList.remove('hidden');
 
                     // Forçar download do arquivo ZIP
