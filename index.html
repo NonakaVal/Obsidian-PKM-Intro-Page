@@ -25,8 +25,9 @@
 /* ===== VARIÁVEIS CSS UNIFICADAS ===== */
 :root {
   /* Sistema de Cores */
-  --primary: #9072c4;
-  --primary-light: #b794ee;
+  /* Sistema de Cores */
+  --primary: #7e57c2;
+  --primary-light: #b085f5;
   --primary-dark: #4d2c91;
   
   /* Tema Escuro */
@@ -284,7 +285,7 @@ body.light-mode {
 }
 
 .heading-secondary {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 1.7rem);
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: clamp(1.5rem, 4vw, 3rem);
@@ -301,7 +302,7 @@ body.light-mode {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #a78bfa 0%, var(--primary) 50%, #5b21b6 100%);
+  background: linear-gradient(135deg, #ffffff 0%,#ffffff 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -947,14 +948,14 @@ input:focus-visible {
             <!-- Texto -->
             <text x="110" y="100" font-family="'Merriweather', serif" font-size="29" font-weight="800" fill="white"
                 letter-spacing="-0.5">
-                Between Notes Obsidian Template
+                <a href="https://www.youtube.com/@nonaka96" target="_blank" rel="noopener noreferrer">NonakaVal</a> - Obsidian Template
             </text>
 
             <!-- Ícone do Obsidian (externo, pequeno e centralizado abaixo da palavra "Obsidian") -->
-            <image href="https://img.icons8.com/?size=100&id=q53th37bGbV0&format=png&color=ffffff" x="300" y="148"
-                width="22" height="27" opacity="0.9" />
+            <image href="https://img.icons8.com/?size=150&id=q53th37bGbV0&format=png&color=ffffff" x="300" y="148"
+                width="45" height="30" opacity="0.9" />
 
-            <rect x="322" y="112" width="125" height="3.5" fill="url(#dark-grad1)" rx="1.75" />
+            <rect x="110" y="112" width="150" height="3.5" fill="url(#dark-grad1)" rx="1.75" />
         </svg>
 
         <!-- Imagem da Homepage da Vault -->
@@ -963,14 +964,14 @@ input:focus-visible {
                 <img src="assets/homepage-main.png" alt="Homepage da Vault Obsidian" class="w-full h-auto transition-transform duration-500 hover:scale-105 cursor-zoom-in center-print" id="vault-homepage">
             </div>
             <p class="text-center text-gray-400 mt-4 text-sm">
-                Clique na imagem para ampliar
+                <u><strong>Conecte ideias</strong></u>,<br class="md:hidden"> Aprenda de forma intencional<br class="md:hidden"> e transforme suas
+                anotações em <u><strong>Conhecimento Vivo.</strong></u>
             </p>
         </div>
 
         <div class="logo-text mt-6">
             <p class="text-gray-300 text-responsive text-center max-w-2xl mx-auto">
-                <u><strong>Conecte ideias</strong></u>,<br class="md:hidden"> Aprenda de forma intencional<br class="md:hidden"> e transforme suas
-                anotações em <u><strong>Conhecimento Vivo.</strong></u>
+                
             </p>
         </div>
     </section>
@@ -1045,11 +1046,10 @@ input:focus-visible {
                                     class="w-full input-field rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 phone-input"
                                     placeholder="" maxlength="15">
                             </div>
-                        <br>
-                        <p class="text-sm text-gray-300 text-left font-normal">
-                            Comunidade de PKM com Obsidian, ACE, ARC, Zettelkasten, entre outros.
+                                               <p class="text-xs text-gray-500 text-left">
+                            Seu número fica só comigo. Não faço spam nem compartilho.
                         </p>
-                        <br>
+                        
                         <br>
                         <div>
                             <input type="text" id="name" name="name"
@@ -1063,6 +1063,8 @@ input:focus-visible {
                                 placeholder="(Opcional) seu@email.com">
                             <p class="text-xs text-gray-400 mt-1">Para receber atualizações futuras</p>
                         </div>
+                        <br>
+                        <br>
 
                         <div class="flex items-start p-3 rounded-xl bg-purple-900/10 border border-purple-800/20">
                             <input type="checkbox" id="privacy" name="privacy" required
@@ -1071,6 +1073,7 @@ input:focus-visible {
                                 Concordo em receber o vault e novidades de produtividade
                             </label>
                         </div>
+                        <br>
 
                         <!-- Botão -->
                         <button type="submit" id="submit-btn"
@@ -1084,9 +1087,7 @@ input:focus-visible {
                             </div>
                         </button>
 
-                        <p class="text-xs text-gray-500 text-center">
-                            Seu número fica só comigo. Não faço spam nem compartilho com ninguém.
-                        </p>
+
                     </form>
                 </div>
             </div>
@@ -1098,9 +1099,9 @@ input:focus-visible {
     <!-- Galeria -->
     <section id="gallery" class="section-padding px-6 md:px-12 bg-gradient-to-b from-darker to-dark">
         <div class="container-max-width">
-            <div class="text-center mb-20 fade-in">
+            <div class="text-center mb-20">
                 <h2 class="heading-secondary">
-                    <span class="gradient-text">Starter Template Showcase</span>
+                    <span class="gradient-text">Template Showcase</span>
                 </h2>
             </div>
 
