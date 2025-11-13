@@ -25,7 +25,6 @@
 /* ===== VARIÁVEIS CSS UNIFICADAS ===== */
 :root {
   /* Sistema de Cores */
-  /* Sistema de Cores */
   --primary: #7e57c2;
   --primary-light: #b085f5;
   --primary-dark: #4d2c91;
@@ -37,14 +36,6 @@
   --dark-text-secondary: rgba(209, 213, 219, 0.9);
   --dark-border: rgba(126, 87, 194, 0.3);
   --dark-glass: rgba(30, 30, 45, 0.8);
-  
-  /* Tema Claro */
-  --light-bg: #f8fafc;
-  --light-card: #ffffff;
-  --light-text: #1e293b;
-  --light-text-secondary: #64748b;
-  --light-border: rgba(126, 87, 194, 0.2);
-  --light-glass: rgba(255, 255, 255, 0.8);
   
   /* Cores Utilitárias */
   --success: #10b981;
@@ -109,11 +100,6 @@ body {
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 
-body.light-mode {
-  background-color: var(--light-bg);
-  color: var(--light-text);
-}
-
 /* ===== SISTEMA DE LAYOUT ===== */
 .container-max-width {
   max-width: var(--container-max-width);
@@ -140,10 +126,6 @@ body.light-mode {
   background: linear-gradient(90deg, transparent 0%, var(--dark-border) 50%, transparent 100%);
   margin: var(--element-spacing) auto;
   width: 60%;
-}
-
-.light-mode .section-divider {
-  background: linear-gradient(90deg, transparent 0%, var(--light-border) 50%, transparent 100%);
 }
 
 /* ===== SISTEMA DE LOGO RESPONSIVO ===== */
@@ -223,12 +205,6 @@ body.light-mode {
   border-radius: var(--radius-lg);
 }
 
-.light-mode .glass-card {
-  background: var(--light-glass);
-  border: 1px solid var(--light-border);
-  box-shadow: var(--shadow-lg);
-}
-
 .card-hover {
   transition: all 0.4s var(--transition-bounce);
 }
@@ -237,10 +213,6 @@ body.light-mode {
   transform: translateY(-8px);
   border-color: rgba(126, 87, 194, 0.6);
   box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
-}
-
-.light-mode .card-hover:hover {
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== SISTEMA DE BOTÕES ===== */
@@ -313,24 +285,12 @@ body.light-mode {
   color: var(--dark-text-secondary);
 }
 
-.light-mode .text-gray-300 {
-  color: var(--light-text-secondary);
-}
-
 .text-gray-400 {
   color: rgba(156, 163, 175, 0.9);
 }
 
-.light-mode .text-gray-400 {
-  color: var(--light-text-secondary);
-}
-
 .text-gray-500 {
   color: rgba(107, 114, 128, 0.9);
-}
-
-.light-mode .text-gray-500 {
-  color: var(--light-text-secondary);
 }
 
 /* ===== SISTEMA DE FORMULÁRIOS ===== */
@@ -343,12 +303,6 @@ body.light-mode {
   width: 100%;
   padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
   font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.light-mode .input-field {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--light-border);
-  color: var(--light-text);
 }
 
 .input-field:focus {
@@ -424,6 +378,7 @@ body.light-mode {
   cursor: pointer;
   overflow: hidden;
   border-radius: var(--radius-lg);
+  aspect-ratio: 16/9;
 }
 
 .gallery-item:hover {
@@ -431,14 +386,10 @@ body.light-mode {
   box-shadow: var(--shadow-2xl);
 }
 
-.light-mode .gallery-item:hover {
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.2);
-}
-
 .gallery-item img {
   transition: transform 0.4s ease;
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -522,12 +473,6 @@ body.light-mode {
   justify-content: center;
 }
 
-.light-mode .feature-icon {
-  background: linear-gradient(135deg, rgba(126, 87, 194, 0.1) 0%, rgba(126, 87, 194, 0.05) 100%);
-  border: 1px solid rgba(126, 87, 194, 0.3);
-  box-shadow: 0 4px 16px rgba(126, 87, 194, 0.05);
-}
-
 /* ===== COMPONENTES ESPECÍFICOS ===== */
 .personal-message {
   background: linear-gradient(135deg, rgba(126, 87, 194, 0.1) 0%, rgba(126, 87, 194, 0.05) 100%);
@@ -535,11 +480,6 @@ body.light-mode {
   border-radius: var(--radius-lg);
   padding: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: clamp(1.5rem, 4vw, 2rem);
-}
-
-.light-mode .personal-message {
-  background: linear-gradient(135deg, rgba(126, 87, 194, 0.05) 0%, rgba(126, 87, 194, 0.02) 100%);
-  border-left: 2px solid var(--primary);
 }
 
 .profile-pic {
@@ -580,11 +520,6 @@ body.light-mode {
   text-align: center;
 }
 
-.light-mode .thank-you-message {
-  background: linear-gradient(135deg, rgba(126, 87, 194, 0.08) 0%, rgba(126, 87, 194, 0.03) 100%);
-  border: 2px solid rgba(126, 87, 194, 0.3);
-}
-
 .thank-you-icon {
   width: 80px;
   height: 80px;
@@ -616,8 +551,8 @@ body.light-mode {
     gap: var(--space-sm);
   }
   
-  .gallery-item img {
-    height: 12rem;
+  .gallery-item {
+    aspect-ratio: 16/9;
   }
   
   .heading-secondary {
@@ -753,7 +688,6 @@ input:focus-visible {
     --primary: #0000ff;
     --primary-dark: #000080;
     --dark-text: #000000;
-    --light-text: #000000;
   }
 }
 
@@ -818,8 +752,8 @@ input:focus-visible {
     gap: 1rem;
   }
   
-  .gallery-item img {
-    height: 14rem;
+  .gallery-item {
+    aspect-ratio: 16/9;
   }
 }
 
@@ -849,6 +783,166 @@ input:focus-visible {
   .mobile-menu-link {
     font-size: 1.5rem;
     padding: 0.75rem 0;
+  }
+}
+
+/* ===== NOVOS ESTILOS PARA O BANNER ===== */
+.banner-section {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/wallhaven-7jgyre.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(21, 21, 33, 0.7) 0%,
+    rgba(21, 21, 33, 0.85) 100%
+  );
+  z-index: 2;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--space-md);
+  text-align: center;
+}
+
+.banner-logo {
+  width: var(--logo-width-desktop);
+  max-width: 600px;
+  margin: 0 auto var(--space-lg);
+}
+
+.banner-text {
+  color: white;
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-highlight {
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+/* Formulário horizontal */
+.horizontal-form-container {
+  width: 100%;
+  max-width: 900px;
+  margin: -50px auto 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 var(--space-md);
+}
+
+.horizontal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+}
+
+.horizontal-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.horizontal-form-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.horizontal-form-checkbox {
+  flex-basis: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.horizontal-form-checkbox input[type="checkbox"] {
+  margin-top: 0.25rem;
+}
+
+.horizontal-form-checkbox label {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.horizontal-form-button {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsividade para o formulário horizontal */
+@media (max-width: 768px) {
+  .horizontal-form {
+    padding: var(--space-md);
+  }
+  
+  .horizontal-form-row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .horizontal-form-field {
+    min-width: 100%;
+    text-align: center
+  }
+  
+  .banner-section {
+    min-height: 60vh;
+  }
+  
+  .horizontal-form-container {
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-section {
+    min-height: 50vh;
+  }
+  
+  .horizontal-form-container {
+    margin-top: -20px;
+  }
+  
+  .horizontal-form {
+    padding: var(--space-sm);
   }
 }
 
@@ -909,190 +1003,132 @@ input:focus-visible {
         </ul>
     </div>
 
-    <!-- Logo Section -->
-    <section class="logo-section bg-gradient-to-b from-dark via-darker to-dark py-10">
-        <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" class="logo-svg drop-shadow-2xl transition-transform duration-500 hover:scale-105">
-            <defs>
-                <linearGradient id="dark-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#A78BFA;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#C084FC;stop-opacity:1" />
-                </linearGradient>
-                <linearGradient id="dark-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
-                </linearGradient>
-            </defs>
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-background"></div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" class="banner-logo drop-shadow-2xl">
+                <defs>
+                    <linearGradient id="dark-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#A78BFA;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#C084FC;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="dark-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
 
-            <!-- Animações e estrutura -->
-            <g transform="translate(20, 70)">
-                <circle cx="0" cy="0" r="14" fill="url(#dark-grad1)">
-                    <animate attributeName="r" values="14;16;14" dur="3s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="60" cy="-10" r="12" fill="url(#dark-grad2)">
-                    <animate attributeName="r" values="12;14;12" dur="3s" begin="0.5s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="30" cy="40" r="15" fill="url(#dark-grad1)">
-                    <animate attributeName="r" values="15;17;15" dur="3s" begin="1s" repeatCount="indefinite" />
-                </circle>
-                <line x1="0" y1="0" x2="60" y2="-10" stroke="url(#dark-grad1)" stroke-width="2.5" opacity="0.6"
-                    stroke-linecap="round" />
-                <line x1="0" y1="0" x2="30" y2="40" stroke="url(#dark-grad2)" stroke-width="2.5" opacity="0.6"
-                    stroke-linecap="round" />
-                <line x1="60" y1="-10" x2="30" y2="40" stroke="url(#dark-grad1)" stroke-width="2.5" opacity="0.6"
-                    stroke-linecap="round" />
-                <circle cx="0" cy="0" r="5" fill="#1A1A1A" opacity="0.9" />
-                <circle cx="60" cy="-10" r="4" fill="#1A1A1A" opacity="0.9" />
-                <circle cx="30" cy="40" r="6" fill="#1A1A1A" opacity="0.9" />
-            </g>
+                <!-- Animações e estrutura -->
+                <g transform="translate(20, 70)">
+                    <circle cx="0" cy="0" r="14" fill="url(#dark-grad1)">
+                        <animate attributeName="r" values="14;16;14" dur="3s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="60" cy="-10" r="12" fill="url(#dark-grad2)">
+                        <animate attributeName="r" values="12;14;12" dur="3s" begin="0.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="30" cy="40" r="15" fill="url(#dark-grad1)">
+                        <animate attributeName="r" values="15;17;15" dur="3s" begin="1s" repeatCount="indefinite" />
+                    </circle>
+                    <line x1="0" y1="0" x2="60" y2="-10" stroke="url(#dark-grad1)" stroke-width="2.5" opacity="0.6"
+                        stroke-linecap="round" />
+                    <line x1="0" y1="0" x2="30" y2="40" stroke="url(#dark-grad2)" stroke-width="2.5" opacity="0.6"
+                        stroke-linecap="round" />
+                    <line x1="60" y1="-10" x2="30" y2="40" stroke="url(#dark-grad1)" stroke-width="2.5" opacity="0.6"
+                        stroke-linecap="round" />
+                    <circle cx="0" cy="0" r="5" fill="#1A1A1A" opacity="0.9" />
+                    <circle cx="60" cy="-10" r="4" fill="#1A1A1A" opacity="0.9" />
+                    <circle cx="30" cy="40" r="6" fill="#1A1A1A" opacity="0.9" />
+                </g>
 
-            <!-- Texto -->
-            <text x="110" y="100" font-family="'Merriweather', serif" font-size="29" font-weight="800" fill="white"
-                letter-spacing="-0.5">
-                <a href="https://www.youtube.com/@nonaka96" target="_blank" rel="noopener noreferrer">NonakaVal</a> - Obsidian Template
-            </text>
+                <!-- Texto -->
+                <text x="110" y="100" font-family="'Merriweather', serif" font-size="29" font-weight="800" fill="white"
+                    letter-spacing="-0.5">
+                    <a href="https://www.youtube.com/@nonaka96" target="_blank" rel="noopener noreferrer">NonakaVal</a> - Obsidian Template
+                </text>
 
-            <!-- Ícone do Obsidian (externo, pequeno e centralizado abaixo da palavra "Obsidian") -->
-            <image href="https://img.icons8.com/?size=150&id=q53th37bGbV0&format=png&color=ffffff" x="300" y="148"
-                width="45" height="30" opacity="0.9" />
+                <!-- Ícone do Obsidian (externo, pequeno e centralizado abaixo da palavra "Obsidian") -->
+                <image href="https://img.icons8.com/?size=150&id=q53th37bGbV0&format=png&color=ffffff" x="300" y="148"
+                    width="45" height="30" opacity="0.9" />
 
-            <rect x="110" y="112" width="150" height="3.5" fill="url(#dark-grad1)" rx="1.75" />
-        </svg>
+                <rect x="110" y="112" width="150" height="3.5" fill="url(#dark-grad1)" rx="1.75" />
+            </svg>
 
-        <!-- Imagem da Homepage da Vault -->
-        <div class="vault-preview">
-            <div class="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="assets/homepage-main.png" alt="Homepage da Vault Obsidian" class="w-full h-auto transition-transform duration-500 hover:scale-105 cursor-zoom-in center-print" id="vault-homepage">
+            <div class="banner-text">
+                <span class="banner-highlight">Conecte ideias</span>, Aprenda de forma intencional e transforme suas anotações em <span class="banner-highlight">Conhecimento Vivo</span>.
             </div>
-            <p class="text-center text-gray-400 mt-4 text-sm">
-                <u><strong>Conecte ideias</strong></u>,<br class="md:hidden"> Aprenda de forma intencional<br class="md:hidden"> e transforme suas
-                anotações em <u><strong>Conhecimento Vivo.</strong></u>
-            </p>
-        </div>
-
-        <div class="logo-text mt-6">
-            <p class="text-gray-300 text-responsive text-center max-w-2xl mx-auto">
-                
-            </p>
         </div>
     </section>
 
-    <div class="section-divider my-4"></div>
-
-    <!-- Download Section -->
-    <section id="download" class="section-padding px-6 md:px-12 bg-gradient-to-br from-darker via-dark to-darker">
-        <div class="container-max-width">
-            <div class="grid-responsive">
-                <!-- Left Section (Mensagem + Vídeo) -->
-                <div class="fade-in">
-                    <!-- Mensagem pessoal -->
-                    <div class="personal-message">
-                        <img src="assets/profire-pic.png" alt="Profile" class="profile-pic mb-4">
-
-                        <p class="text-gray-300 leading-relaxed text-left">
-                            <strong>Eai 👋...</strong> Se veio do
-                            <a href="https://www.youtube.com/@nonaka96" target="_blank" rel="noopener noreferrer"
-                                class="text-blue-400 underline hover:text-blue-300">YouTube</a>,
-                            <u><strong>Muito obrigado</strong></u> 💜!
-                        </p>
-                        <p class="text-gray-300 mt-4 text-left font-normal">
-                            Seu formulário para download está logo abaixo 👇 ou ao lado 👉
-                        </p>
-
-                        <p class="text-gray-400 mt-6 text-left text-sm">
-                            Se chegou aqui de outra maneira, veja o vídeo abaixo:
-                        </p>
-                    </div>
-
-                    <!-- Vídeo YouTube responsivo -->
-                    <div class="glass-card shadow-lg">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/xcBBsdhYBgs" title="Demonstração do ObsiVault"
-                                class="absolute top-0 left-0 w-full h-full rounded-2xl"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
-                            </iframe>
-                        </div>
-                    </div>
+    <!-- Formulário Horizontal -->
+    <div class="horizontal-form-container">
+        <div class="glass-card horizontal-form fade-in">
+            <form id="download-form" class="space-y-4" novalidate>
+                <!-- Mensagem de sucesso -->
+                <div id="form-success"
+                    class="hidden bg-gradient-to-r from-green-900/40 to-green-800/20 text-green-300 p-4 rounded-xl text-center border border-green-800/30"
+                    role="alert" aria-live="polite">
+                    <i data-feather="check-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
+                    <span id="success-message">Seu download deve começar imediatamente</span>
                 </div>
 
-                <!-- Right Section (Formulário) -->
-                <div class="glass-card form-container fade-in">
-                    <form id="download-form" class="space-y-6" novalidate>
-                        <!-- Mensagem de sucesso -->
-                        <div id="form-success"
-                            class="hidden bg-gradient-to-r from-green-900/40 to-green-800/20 text-green-300 p-4 rounded-xl text-center border border-green-800/30"
-                            role="alert" aria-live="polite">
-                            <i data-feather="check-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
-                            <span id="success-message">Seu download deve começar imediatamente</span>
-                        </div>
+                <!-- Mensagem de erro -->
+                <div id="form-error"
+                    class="hidden bg-gradient-to-r from-red-900/40 to-red-800/20 text-red-300 p-4 rounded-xl text-center border border-red-800/30"
+                    role="alert" aria-live="assertive">
+                    <i data-feather="alert-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
+                    <span id="error-message">Algo deu errado. Pode tentar de novo?</span>
+                </div>
 
-                        <!-- Mensagem de erro -->
-                        <div id="form-error"
-                            class="hidden bg-gradient-to-r from-red-900/40 to-red-800/20 text-red-300 p-4 rounded-xl text-center border border-red-800/30"
-                            role="alert" aria-live="assertive">
-                            <i data-feather="alert-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
-                            <span id="error-message">Algo deu errado. Pode tentar de novo?</span>
-                        </div>
-
-                        <!-- Campos -->
-                             <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Seu
-                                WhatsApp*</label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <span class="text-gray-400">+55</span>
-                                </div>
-                                <input type="tel" id="phone" name="phone" required
-                                    class="w-full input-field rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 phone-input"
-                                    placeholder="" maxlength="15">
+                <!-- Campos do formulário em linha -->
+                <div class="horizontal-form-row">
+                    <div class="horizontal-form-field">
+                        <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Seu WhatsApp*</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <span class="text-gray-400">+55</span>
                             </div>
-                                               <p class="text-xs text-gray-500 text-left">
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full input-field rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 phone-input"
+                                placeholder="" maxlength="15">
+                        </div>
+                        <p class="text-xs text-gray-500 text-left mt-1">
                             Seu número fica só comigo. Não faço spam nem compartilho.
                         </p>
-                        
-                        <br>
-                        <div>
-                            <input type="text" id="name" name="name"
-                                class="w-full input-field"
-                                placeholder="(Opcional) Seu nome ou apelido">
-                        </div>
-                        <br>
-                        <div>
-                            <input type="email" id="email" name="email"
-                                class="w-full input-field"
-                                placeholder="(Opcional) seu@email.com">
-                            <p class="text-xs text-gray-400 mt-1">Para receber atualizações futuras</p>
-                        </div>
-                        <br>
-                        <br>
+                    </div>
 
-                        <div class="flex items-start p-3 rounded-xl bg-purple-900/10 border border-purple-800/20">
-                            <input type="checkbox" id="privacy" name="privacy" required
-                                class="w-4 h-4 rounded bg-gray-800 border-purple-500 text-purple-500 focus:ring-purple-500 mr-3 mt-1">
-                            <label for="privacy" class="text-xs text-gray-300 leading-relaxed">
-                                Concordo em receber o vault e novidades de produtividade
-                            </label>
-                        </div>
-                        <br>
-
-                        <!-- Botão -->
-                        <button type="submit" id="submit-btn"
-                            class="btn-primary w-full flex items-center justify-center relative focus:outline-none">
-                            <i data-feather="download" class="mr-2" aria-hidden="true"></i>
-                            <span id="btn-text">Baixar e Acessar Grupo</span>
-
-                            <div id="btn-loading" class="hidden ml-2" aria-hidden="true">
-                                <div class="loading-spinner rounded-full border-2 border-white border-t-transparent w-5 h-5">
-                                </div>
-                            </div>
-                        </button>
-
-
-                    </form>
+                    <div class="horizontal-form-field">
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nome (Opcional)</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full input-field"
+                            placeholder="Seu nome ou apelido">
+                    </div>
                 </div>
-            </div>
+
+                <div class="horizontal-form-checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required
+                        class="w-4 h-4 rounded bg-gray-800 border-purple-500 text-purple-500 focus:ring-purple-500">
+                    <label for="privacy" class="text-xs text-gray-300 leading-relaxed">
+                        Concordo em receber o vault e novidades de produtividade
+                    </label>
+                </div>
+
+                <div class="horizontal-form-button">
+                    <button type="submit" id="submit-btn"
+                        class="btn-primary flex items-center justify-center relative focus:outline-none">
+                        <i data-feather="download" class="mr-2" aria-hidden="true"></i>
+                        <span id="btn-text">Baixar e Acessar Grupo</span>
+
+                        <div id="btn-loading" class="hidden ml-2" aria-hidden="true">
+                            <div class="loading-spinner rounded-full border-2 border-white border-t-transparent w-5 h-5">
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </form>
         </div>
-    </section>
+    </div>
 
     <div class="section-divider my-4"></div>
 
@@ -1345,17 +1381,7 @@ input:focus-visible {
             const closeModal = document.querySelector('.close-modal');
             const phoneInput = document.getElementById('phone');
             const downloadForm = document.getElementById('download-form');
-            const downloadSection = document.getElementById('download');
             const successSection = document.getElementById('success-section');
-            const vaultHomepage = document.getElementById('vault-homepage');
-
-            // Funcionalidade para ampliar a imagem da homepage da vault
-            if (vaultHomepage) {
-                vaultHomepage.addEventListener('click', function () {
-                    const imageSrc = this.getAttribute('src');
-                    openModal(imageSrc);
-                });
-            }
 
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1503,7 +1529,7 @@ input:focus-visible {
 
                 const phone = phoneInput.value;
                 const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
+                const email = document.getElementById('email')?.value || '';
 
                 // Validar telefone
                 const cleanedPhone = phone.replace(/\D/g, '');
@@ -1556,9 +1582,6 @@ input:focus-visible {
 
                     // Mostrar seção de sucesso após 3 segundos
                     setTimeout(() => {
-                        // Esconder a seção de download
-                        downloadSection.style.display = 'none';
-
                         // Mostrar a seção de sucesso
                         successSection.style.display = 'block';
 
@@ -1589,7 +1612,7 @@ input:focus-visible {
                     btnLoading.classList.remove('hidden');
                 } else {
                     btn.disabled = false;
-                    btnText.textContent = 'Me envia o vault e me adiciona no grupo';
+                    btnText.textContent = 'Baixar e Acessar Grupo';
                     btnLoading.classList.add('hidden');
                 }
             }
@@ -1600,7 +1623,6 @@ input:focus-visible {
                 if (existingSubscriber) {
                     const subscriberData = JSON.parse(existingSubscriber);
                     // Se já existe um subscriber, mostrar a seção de sucesso
-                    downloadSection.style.display = 'none';
                     successSection.style.display = 'block';
                 }
             }
