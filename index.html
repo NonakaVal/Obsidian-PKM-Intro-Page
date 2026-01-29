@@ -1490,15 +1490,15 @@ input:focus-visible {
             function triggerDownload() {
                 try {
                     const link = document.createElement('a');
-                    link.href = 'assets/Vault-Between-Notes.zip';
-                    link.download = 'Vault-Between-Notes.zip';
+                    link.href = 'assets/Obsidian-PKM-Intro-Template-Vault.zip';
+                    link.download = 'Obsidian-PKM-Intro-Template-Vault.zip';
                     link.style.display = 'none';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
                 } catch (error) {
                     console.error('Erro no download:', error);
-                    window.open('assets/Vault-Between-Notes.zip', '_blank');
+                    window.open('assets/Obsidian-PKM-Intro-Template-Vault.zip', '_blank');
                 }
             }
 
