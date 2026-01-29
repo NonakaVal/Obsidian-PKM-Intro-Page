@@ -11,14 +11,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        // Inicializar EmailJS
-        (function () {
-            emailjs.init("PZiDE9NvPUsrqACAs"); // Sua Public Key do EmailJS
-        })();
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
@@ -853,82 +845,35 @@ input:focus-visible {
   font-weight: 600;
 }
 
-/* Formulário horizontal */
-.horizontal-form-container {
+/* Botão de download centralizado */
+.download-button-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 600px;
   margin: -50px auto 0;
   position: relative;
   z-index: 10;
   padding: 0 var(--space-md);
 }
 
-.horizontal-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+.download-button-wrapper {
   padding: var(--space-lg);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-2xl);
+  text-align: center;
 }
 
-.horizontal-form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  width: 100%;
-}
-
-.horizontal-form-field {
-  flex: 1;
-  min-width: 200px;
-}
-
-.horizontal-form-checkbox {
-  flex-basis: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  padding: var(--space-md);
-}
-
-.horizontal-form-checkbox input[type="checkbox"] {
-  margin-top: 0.25rem;
-}
-
-.horizontal-form-checkbox label {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.horizontal-form-button {
-  flex-basis: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Responsividade para o formulário horizontal */
+/* Responsividade para o botão de download */
 @media (max-width: 768px) {
-  .horizontal-form {
+  .download-button-wrapper {
     padding: var(--space-md);
   }
   
-  .horizontal-form-row {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-  
-  .horizontal-form-field {
-    min-width: 100%;
-    text-align: center
+  .download-button-container {
+    margin-top: -30px;
   }
   
   .banner-section {
     min-height: 60vh;
-  }
-  
-  .horizontal-form-container {
-    margin-top: -30px;
   }
 }
 
@@ -937,11 +882,11 @@ input:focus-visible {
     min-height: 50vh;
   }
   
-  .horizontal-form-container {
+  .download-button-container {
     margin-top: -20px;
   }
   
-  .horizontal-form {
+  .download-button-wrapper {
     padding: var(--space-sm);
   }
 }
@@ -963,8 +908,8 @@ input:focus-visible {
                         <li><a href="#features"
                                 class="nav-link text-gray-300 hover:text-white transition font-medium text-sm tracking-wide focus:outline-none focus:text-white">Features</a>
                         </li>
-                        <li><a href="#download"
-                                class="nav-link text-gray-300 hover:text-white transition font-medium text-sm tracking-wide focus:outline-none focus:text-white">Baixar</a>
+                        <li><a href="#success-section"
+                                class="nav-link text-gray-300 hover:text-white transition font-medium text-sm tracking-wide focus:outline-none focus:text-white">Comunidade</a>
                         </li>
                     </ul>
                 </nav>
@@ -996,9 +941,9 @@ input:focus-visible {
                     class="mobile-menu-link text-2xl gradient-text font-medium hover:scale-110 transition focus:outline-none focus:scale-110"
                     role="menuitem">Features</a>
             </li>
-            <li role="none"><a href="#download"
+            <li role="none"><a href="#success-section"
                     class="mobile-menu-link text-2xl gradient-text font-medium hover:scale-110 transition focus:outline-none focus:scale-110"
-                    role="menuitem">Receber</a>
+                    role="menuitem">Comunidade</a>
             </li>
         </ul>
     </div>
@@ -1061,64 +1006,22 @@ input:focus-visible {
         </div>
     </section>
 
-    <!-- Formulário Horizontal -->
-    <div class="horizontal-form-container">
-        <div class="glass-card horizontal-form fade-in">
-            <form id="download-form" class="space-y-4" novalidate>
-                <!-- Mensagem de sucesso -->
-                <div id="form-success"
-                    class="hidden bg-gradient-to-r from-green-900/40 to-green-800/20 text-green-300 p-4 rounded-xl text-center border border-green-800/30"
-                    role="alert" aria-live="polite">
-                    <i data-feather="check-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
-                    <span id="success-message">Seu download deve começar imediatamente</span>
-                </div>
+    <!-- Botão de Download Centralizado -->
+    <div class="download-button-container">
+        <div class="glass-card download-button-wrapper fade-in">
+            <button id="download-btn"
+                class="btn-primary flex items-center justify-center mx-auto relative focus:outline-none">
+                <i data-feather="download" class="mr-2" aria-hidden="true"></i>
+                <span id="btn-text">Baixar Template e Acessar Comunidade</span>
 
-                <!-- Mensagem de erro -->
-                <div id="form-error"
-                    class="hidden bg-gradient-to-r from-red-900/40 to-red-800/20 text-red-300 p-4 rounded-xl text-center border border-red-800/30"
-                    role="alert" aria-live="assertive">
-                    <i data-feather="alert-circle" class="inline-block mr-3 text-xl" aria-hidden="true"></i>
-                    <span id="error-message">Algo deu errado. Pode tentar de novo?</span>
-                </div>
-
-                <!-- Campos do formulário em linha -->
-                <div class="horizontal-form-row">
-                    <div class="horizontal-form-field">
-                        <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Seu WhatsApp*</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <span class="text-gray-400">+55</span>
-                            </div>
-  
-                            <input type="tel" id="phone" name="phone" required
-                                class="w-full input-field rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 phone-input"
-                                placeholder="" maxlength="15">
-                        </div>
-                        <p class="text-xs text-gray-500 text-left mt-1">
-                            Seu número fica só comigo. Não faço spam nem compartilho.
-                        </p>
-                    </div>
-
-                    <div class="horizontal-form-field">
-                        <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Seu nome ou apelido</label>
-                        <input type="text" id="name" name="name"
-                            class="w-full input-field"
-                            placeholder="(Opcional)">
+                <div id="btn-loading" class="hidden ml-2" aria-hidden="true">
+                    <div class="loading-spinner rounded-full border-2 border-white border-t-transparent w-5 h-5">
                     </div>
                 </div>
-                <div class="horizontal-form-button">
-                    <button type="submit" id="submit-btn"
-                        class="btn-primary flex items-center justify-center relative focus:outline-none">
-                        <i data-feather="download" class="mr-2" aria-hidden="true"></i>
-                        <span id="btn-text">Baixar e Acessar nosso Grupo</span>
-
-                        <div id="btn-loading" class="hidden ml-2" aria-hidden="true">
-                            <div class="loading-spinner rounded-full border-2 border-white border-t-transparent w-5 h-5">
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </form>
+            </button>
+            <p class="text-sm text-gray-400 mt-4">
+                Clique para baixar o template e descer para entrar na comunidade
+            </p>
         </div>
     </div>
 
@@ -1284,22 +1187,20 @@ input:focus-visible {
         </div>
     </section>
 
-    <!-- Success Section -->
-    <section id="success-section" class="section-padding px-6 md:px-12 bg-gradient-to-b from-dark to-darker"
-        style="display: none;">
+    <!-- Comunidade Section -->
+    <section id="success-section" class="section-padding px-6 md:px-12 bg-gradient-to-b from-dark to-darker">
         <div class="container-max-width">
-            <!-- Mensagem de Agradecimento Principal -->
+            <!-- Mensagem de Comunidade -->
             <div class="thank-you-message fade-in text-center">
                 <div class="thank-you-icon mb-4">
-                    <i data-feather="heart" class="text-white text-3xl"></i>
+                    <i data-feather="users" class="text-white text-3xl"></i>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    🎉 Muito Obrigado
+                    🚀 Entre na Nossa Comunidade
                 </h2>
                 <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Seu download deve começar automaticamente!  🚀<br>
-                    Você pode entrar no grupo do WhatsApp ou seguir para o guia de instalação para
-                    começar.
+                    Baixou o template? Agora é hora de se conectar!<br>
+                    Junte-se à nossa comunidade no WhatsApp para tirar dúvidas, compartilhar ideias e aprender com outros usuários do Obsidian.
                 </p>
 
                 <!-- Botões de Ação -->
@@ -1369,8 +1270,7 @@ input:focus-visible {
             const modal = document.getElementById('gallery-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.querySelector('.close-modal');
-            const phoneInput = document.getElementById('phone');
-            const downloadForm = document.getElementById('download-form');
+            const downloadBtn = document.getElementById('download-btn');
             const successSection = document.getElementById('success-section');
 
             // Smooth scroll for anchor links
@@ -1417,25 +1317,6 @@ input:focus-visible {
             window.addEventListener('load', fadeInOnScroll);
             window.addEventListener('scroll', fadeInOnScroll);
 
-            // Phone number formatting
-            phoneInput.addEventListener('input', function (e) {
-                let value = e.target.value.replace(/\D/g, '');
-                if (value.length > 11) {
-                    value = value.substring(0, 11);
-                }
-                if (value.length > 0) {
-                    let formatted = '';
-                    if (value.length <= 2) {
-                        formatted = '(' + value;
-                    } else if (value.length <= 7) {
-                        formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2);
-                    } else {
-                        formatted = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
-                    }
-                    e.target.value = formatted;
-                }
-            });
-
             // Galeria com modal para imagens expandidas
             function openModal(imageSrc) {
                 modalImage.src = imageSrc;
@@ -1480,145 +1361,53 @@ input:focus-visible {
             function triggerDownload() {
                 try {
                     const link = document.createElement('a');
-                    link.href = 'assets/Obsidian-PKM-Intro-Template-Vault.zip';
-                    link.download = 'Obsidian-PKM-Intro-Template-Vault.zip';
+                    link.href = 'assets/Obsidian-PKM-Intro-Template.zip';
+                    link.download = 'Obsidian-PKM-Intro-Template.zip';
                     link.style.display = 'none';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
                 } catch (error) {
                     console.error('Erro no download:', error);
-                    window.open('assets/Obsidian-PKM-Intro-Template-Vault.zip', '_blank');
+                    window.open('assets/Obsidian-PKM-Intro-Template.zip', '_blank');
                 }
             }
 
-            // Função para enviar email via EmailJS
-            async function sendEmail(formData) {
-                try {
-                    const serviceID = 'service_9ksnavu'; // Seu Service ID
-                    const templateID = 'template_td70phi'; // Seu Template ID
-
-                    const response = await emailjs.send(serviceID, templateID, {
-                        from_name: formData.name || 'Não informado',
-                        phone: formData.phone,
-                        email: formData.email || 'Não informado',
-                        message: `Novo lead do ObsiVault!\n\nNome: ${formData.name || 'Não informado'}\nWhatsApp: ${formData.phone}\nEmail: ${formData.email || 'Não informado'}\n\nData: ${new Date().toLocaleString('pt-BR')}`,
-                        to_email: 'valdenirnonaka@gmail.com'
-                    });
-
-                    return { success: true, data: response };
-                } catch (error) {
-                    console.error('Erro ao enviar email:', error);
-                    return { success: false, error: error };
-                }
-            }
-
-            // Form submission com EmailJS
-            downloadForm.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                const phone = phoneInput.value;
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email')?.value || '';
-
-                // Validar telefone
-                const cleanedPhone = phone.replace(/\D/g, '');
-                if (!phone || cleanedPhone.length !== 11) {
-                    document.getElementById('error-message').textContent = 'Me passa um número de WhatsApp válido, no formato (DDD) 9XXXX-XXXX';
-                    document.getElementById('form-error').classList.remove('hidden');
-                    return;
-                }
-
+            // Botão de download
+            downloadBtn.addEventListener('click', function () {
                 // Mostrar loading
                 setLoading(true);
 
-                // Esconder mensagens anteriores
-                document.getElementById('form-success').classList.add('hidden');
-                document.getElementById('form-error').classList.add('hidden');
+                // Forçar download do arquivo ZIP
+                setTimeout(() => {
+                    triggerDownload();
+                }, 500);
 
-                try {
-                    // Preparar dados do formulário
-                    const formData = {
-                        name: name,
-                        phone: phone,
-                        email: email,
-                        timestamp: new Date().toISOString()
-                    };
-
-                    // Enviar email via EmailJS
-                    const emailResult = await sendEmail(formData);
-
-                    if (!emailResult.success) {
-                        throw new Error('Falha ao enviar email');
-                    }
-
-                    // Mostrar mensagem de sucesso no formulário
-                    document.getElementById('success-message').textContent = 'Tudo certo 🎉🎉 ... ';
-                    document.getElementById('form-success').classList.remove('hidden');
-
-                    // Forçar download do arquivo ZIP
-                    setTimeout(() => {
-                        triggerDownload();
-                    }, 1000);
-
-                    // Salvar localmente
-                    const subscriberData = {
-                        phone: '55' + cleanedPhone,
-                        name: name || '',
-                        email: email || '',
-                        timestamp: new Date().toISOString()
-                    };
-                    localStorage.setItem('obsivault_subscriber', JSON.stringify(subscriberData));
-
-                    // Mostrar seção de sucesso após 3 segundos
-                    setTimeout(() => {
-                        // Mostrar a seção de sucesso
-                        successSection.style.display = 'block';
-
-                        // Rolar suavemente para a seção de sucesso
-                        successSection.scrollIntoView({ behavior: 'smooth' });
-
-                        // Resetar o formulário
-                        downloadForm.reset();
-                    }, 3000);
-
-                } catch (error) {
-                    console.error('Erro:', error);
-                    document.getElementById('error-message').textContent = 'Algo deu errado. Pode tentar de novo?';
-                    document.getElementById('form-error').classList.remove('hidden');
-                } finally {
+                // Rolar para a seção da comunidade após 1 segundo
+                setTimeout(() => {
+                    // Rolar suavemente para a seção de comunidade
+                    successSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Remover loading
                     setLoading(false);
-                }
+                }, 1000);
             });
 
             function setLoading(isLoading) {
-                const btn = document.getElementById('submit-btn');
+                const btn = document.getElementById('download-btn');
                 const btnText = document.getElementById('btn-text');
                 const btnLoading = document.getElementById('btn-loading');
 
                 if (isLoading) {
                     btn.disabled = true;
-                    btnText.textContent = 'Enviando...';
+                    btnText.textContent = 'Baixando...';
                     btnLoading.classList.remove('hidden');
                 } else {
                     btn.disabled = false;
-                    btnText.textContent = 'Baixar e Acessar Grupo';
+                    btnText.textContent = 'Baixar Template e Acessar Comunidade';
                     btnLoading.classList.add('hidden');
                 }
             }
-
-            // Verificar se já existe um subscriber no localStorage
-            function checkExistingSubscriber() {
-                const existingSubscriber = localStorage.getItem('obsivault_subscriber');
-                if (existingSubscriber) {
-                    const subscriberData = JSON.parse(existingSubscriber);
-                    // Se já existe um subscriber, mostrar a seção de sucesso
-                    successSection.style.display = 'block';
-                }
-            }
-
-            // Verificar ao carregar a página
-            checkExistingSubscriber();
         });
     </script>
 </body>
